@@ -1,2 +1,6 @@
 package main
-//import "fmt"
+import "fmt"
+
+func ATest() {
+	fmt.Println("testt")
+}

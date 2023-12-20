@@ -1,0 +1,38 @@
+
+.nav-ctn {
+    @apply  w-full top-0 z-20 py-2;
+
+    .nav-wrapper {
+        @apply items-center px-4 max-w-screen-xl mx-auto lg:flex lg:px-10;
+
+        & > div:first-child {
+            @apply flex items-center justify-between py-3 lg:py-4 lg:block;
+            
+            .logo-name {
+                font-family: $f-family-stand;
+                font-weight: bold;
+                line-height: 1.6;
+                letter-spacing: 2px;
+                color: $primary-color;
+            }
+        }
+        & > div:last-child {
+            @apply w-1/2  flex-1 justify-between flex-row lg:overflow-visible lg:flex lg:pb-0 lg:pr-0 lg:h-auto ;
+            .nav-side {
+                @apply flex-1;
+                & > ul {
+                    @apply justify-end items-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0
+                }
+            }
+            .dark-side {
+                & ul {
+                    @apply flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row;
+                    
+                    li {
+                        @apply mt-8 mb-8 lg:mt-0 lg:mb-0;
+                    }
+                }
+            }
+        }
+    }
+}

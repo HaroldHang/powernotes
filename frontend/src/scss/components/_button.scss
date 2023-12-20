@@ -1,0 +1,32 @@
+
+.btn-primary {
+    @apply py-2 px-4 text-center rounded-full block w-fit text-lg;
+    color: $primary-color;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+        @apply text-white;
+        @include primary-bg-color;
+    }
+    &--stand {
+        @include primary-bg-color;
+        @apply text-white;
+
+    }
+}
+.btn-cta {
+    @apply p-2 text-center text-white rounded-md shadow block w-fit;
+    
+}
+
+.btn-link {
+    @apply p-2 text-center underline;
+    @apply text-primary-color;
+    &:hover {
+        
+    }
+
+    &--reset {
+        @apply p-0;
+    }
+}

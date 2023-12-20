@@ -1,0 +1,48 @@
+
+@layer utilities {
+
+    .primary-color {
+        //@apply bg-liver;
+        background-color : $primary-color;
+    }
+    
+    
+    .text-default {
+        @apply text-neutral-950;
+    }
+    
+    .text-primary-color {
+        color : $primary-color;
+
+    }
+    
+    
+    .text-white-color {
+        @apply text-white;
+    }
+}
+
+
+
+
+@mixin primary-bg-color {
+    
+    background-color: $primary-color;
+    
+}
+
+@mixin primary-stand-color {
+    @apply bg-rose-500;
+}
+
+@mixin my-gradient($angle : 180deg) {
+    /*background: rgb(255,241,242);
+    background: linear-gradient(180deg, rgba(255,241,242,1) 0%, rgba(255,228,230,1) 50%, rgba(254,205,211,1) 95%); */
+    //background: rgb(255,255,255);
+    background: linear-gradient($angle, rgba(255,255,255,1) 15%, rgba(255,228,230,1) 66%, rgba(254,205,211,1) 93%);
+    
+}
+
+@mixin bg-gradient {
+
+}

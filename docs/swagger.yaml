@@ -1,0 +1,19 @@
+info:
+  contact: {}
+paths:
+  /notes:
+    get:
+      consumes:
+      - application/json
+      description: do notes
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: json
+      summary: note example
+      tags:
+      - notes
+swagger: "2.0"

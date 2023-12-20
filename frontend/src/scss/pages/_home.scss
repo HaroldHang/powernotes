@@ -1,0 +1,108 @@
+.home-page {
+    $padding-section : 3rem;
+    main {
+        //@apply outline outline-black;
+        padding: 0 $padding-section;
+        .banner-hero {
+            height: 60vh;
+            @apply flex flex-col items-center justify-center gap-5;
+            padding-top: $padding-section;
+            padding-bottom: 3rem;
+            //background-image: url('../../assets/Images/bg-banner.svg');
+            & > h1 {
+                font-family: $f-family-stand;
+                @apply text-5xl font-semibold;
+
+            }
+            .note {
+                position: relative;
+                display: inline-block;
+                //outline: 2px solid red;
+                margin: 0 15px;
+                & > img {
+                    position: absolute;
+                    left: 0px;
+                    top: -25%;
+                    width: 100%;
+                    
+                    transform: scale(1.75,3);
+                    
+                }
+            }
+            & > p {
+                @apply text-lg;
+            }
+            .btn-actions {
+                @apply flex gap-5
+            }
+        }
+        
+        .features {
+            position: relative;
+            padding-top: $padding-section;
+            padding-bottom: $padding-section;
+            @apply flex flex-col items-center gap-12;
+            & > h3 {
+                font-family: $f-family-stand;
+                color: $primary-color;
+                @apply text-3xl;
+            }
+            .features-ctn {
+                @apply grid grid-cols-3 gap-12 py-4;
+                .aFeature {
+                    @apply p-3 bg-white border-2 border-slate-300 rounded-md flex flex-col items-center gap-5;
+
+                    .imgCtn {
+                        position: relative;
+                        @apply h-24 w-24 rounded-md; 
+                        img {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            
+                        }
+                    }
+                    & > h3 {
+                        @apply text-2xl font-bold;
+                        color: $primary-color;
+                    }
+                }
+                
+                
+            }
+        }
+        .aboutUs {
+            position: relative;
+            padding-top: $padding-section;
+            padding-bottom: $padding-section;
+            @apply flex flex-col items-center gap-12;
+            & > h3 {
+                font-family: $f-family-stand;
+                color: $primary-color;
+                @apply text-3xl;
+            }
+
+            .aboutCtn {
+                @apply w-1/2 flex flex-col items-center gap-5;
+
+                & > p {
+                    @apply text-lg text-justify;
+                }
+            }
+        }
+        
+    }
+
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    } 
+    100% {
+        opacity: 1;
+    }
+}

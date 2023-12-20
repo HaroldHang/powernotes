@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 100%;
+    
+    width: 100vw;
+    /*@media screen and (max-width : $xs) {
+        font-size: 87.5%;
+        overflow-x: hidden;
+    }*/
+    scroll-behavior: smooth;
+}
+body {
+    font-family : $f-family-body;
+    //padding: 0 120px;
+    //color : $text-primary-color;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    & * {
+        box-sizing: border-box;
+    }
+    //background-color: black;
+    //@apply bg-gray-50;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+    margin : 0;
+    /*@media screen and (max-width : $xs) {
+        text-align: center;
+        padding: .3125rem;
+    }*/
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    
+}
+
+input {
+    outline : none
+}
