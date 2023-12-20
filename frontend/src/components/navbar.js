@@ -14,7 +14,7 @@ const Navbar = () => {
         },
         { 
             title: "Our API", 
-            path: "/" 
+            path: "/swagger/index.html" 
         },
         /*{
             title : "Services",

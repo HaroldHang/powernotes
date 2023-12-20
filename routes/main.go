@@ -9,6 +9,9 @@ import (
 	//"html/template"
 	"net/http"
 	"embed"
+	"github.com/gin-gonic/contrib/static"
+	"path/filepath"
+	"os"
 )
 
 var router = gin.Default()
@@ -18,14 +21,14 @@ var f embed.FS
 // this way every group of routes can be defined in their own file
 // so this one won't be so messy
 
-// @title Power Notes API
+// @title PowerNotes API
 // @version 1.0
-// @description This is a sample server.
+// @description This is the api for note mangement.
 // @termsOfService http://swagger.io/terms/
 
 // @contact.name API Support
 // @contact.url http://www.swagger.io/support
-// @contact.email support@swagger.io
+// @contact.email han20tuf@gmail.com
 
 // @license.name Apache 2.0
 // @license.url http://www.apache.org/licenses/LICENSE-2.0.html
@@ -36,6 +39,7 @@ func getRoutes() {
 	docs.SwaggerInfo.BasePath = "/api/v1"
 	v1 := router.Group("api/v1")
 	addNotesRoutes(v1)
+	addTagsRoutes(v1)
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 	//v2 := router.Group("/v2")
 	//addPingRoutes(v2)
@@ -45,11 +49,20 @@ func getRoutes() {
 func Run() {
 	//templ := template.Must(template.New("").ParseFS(f, "templates/*.tmpl"))
 	//router.SetHTMLTemplate(templ)
-	router.LoadHTMLGlob("templates/*")
+	//router.LoadHTMLGlob("templates/*")
 	// example: /public/assets/images/example.png
+	//router.GET("/", renderStatic)
+	//router.GET("/:uri", renderStatic)
+	router.Use(static.Serve("/", static.LocalFile("./frontend/build", true)))
 	router.StaticFS("/public", http.FS(f))
-	router.GET("/", renderStatic)
-	router.GET("/:uri", renderStatic)
+	currentDir, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	}
+	frontendDir := filepath.Join(currentDir, "frontend", "build")
+	router.NoRoute(func(c *gin.Context) {
+		c.File(filepath.Join(frontendDir, "index.html"))
+	})
 	getRoutes()
 	router.Run(":8080")
 }

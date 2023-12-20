@@ -5,15 +5,190 @@ paths:
     get:
       consumes:
       - application/json
-      description: do notes
+      description: get Notes
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            type: json
-      summary: note example
+            items:
+              type: string
+            type: array
+      summary: Get a list of notes
       tags:
       - notes
+    post:
+      consumes:
+      - application/json
+      description: create a note with provided content
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            type: string
+      summary: Create a note
+      tags:
+      - notes
+  /notes/:noteId:
+    delete:
+      consumes:
+      - application/json
+      description: delete a note based on ID
+      parameters:
+      - description: Note content
+        in: body
+        name: note
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Delete a specific note
+      tags:
+      - notes
+    get:
+      consumes:
+      - application/json
+      description: get a note based  on ID
+      parameters:
+      - description: Note content
+        in: body
+        name: note
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Get a specific note
+      tags:
+      - notes
+    put:
+      consumes:
+      - application/json
+      description: update a note based  on ID
+      parameters:
+      - description: Note content
+        in: body
+        name: note
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Update a specific note
+      tags:
+      - notes
+  /tags:
+    get:
+      consumes:
+      - application/json
+      description: get Notes
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              type: string
+            type: array
+      summary: Get a list of tags
+      tags:
+      - tags
+    post:
+      consumes:
+      - application/json
+      description: create a tag with provided content
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            type: string
+      summary: Create a tag
+      tags:
+      - tags
+  /tags/:tagId:
+    delete:
+      consumes:
+      - application/json
+      description: delete a tag based on ID
+      parameters:
+      - description: Tag content
+        in: body
+        name: tag
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Delete a specific tag
+      tags:
+      - tags
+    get:
+      consumes:
+      - application/json
+      description: get a tag based  on ID
+      parameters:
+      - description: Tag content
+        in: body
+        name: tag
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Get a specific tag
+      tags:
+      - tags
+    put:
+      consumes:
+      - application/json
+      description: update a tag based  on ID
+      parameters:
+      - description: Tag content
+        in: body
+        name: tag
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Update a specific tag
+      tags:
+      - tags
 swagger: "2.0"
