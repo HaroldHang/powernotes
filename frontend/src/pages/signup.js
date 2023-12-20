@@ -21,6 +21,7 @@ const SignUp = () => {
                         <button className="btn-primary btn-primary--stand">
                             Sign Up
                         </button>
+                        
                     </div>
                 </form>
 
